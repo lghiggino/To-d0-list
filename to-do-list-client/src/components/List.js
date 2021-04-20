@@ -1,13 +1,14 @@
 import ListItem from "./ListItem.js"
 
-const List = (props) => {
+const List = ( {data, handleClick, deleteAction} ) => {
+  console.log("from List component", data)
     return (
       <ul>
-        {props.data.map((singleElement, idx) => 
-        //ternary controls the CSS classes
-          singleElement.completed ? 
-            <ListItem handleClick={props.handleClick} todo={singleElement.todo} key={idx} id={singleElement._id} className="" deleteAction={props.deleteAction}></ListItem> :
-            <ListItem handleClick={props.handleClick} todo={singleElement.todo} key={idx} id={singleElement._id} className="simple-todo" deleteAction={props.deleteAction}></ListItem>
+        {data.map((singleElement, idx) => 
+          //ternary controls the CSS classes
+          singleElement.completed?
+            <ListItem handleClick={handleClick} todo={singleElement.todo} key={idx} id={singleElement._id} deleteAction={deleteAction} /> :
+            <ListItem handleClick={handleClick} todo={singleElement.todo} key={idx} id={singleElement._id} deleteAction={deleteAction} className="simple-todo"/> 
         )}
       </ul>
     )

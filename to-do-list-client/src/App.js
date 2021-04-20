@@ -92,7 +92,7 @@ function App() {
     <div className="App">
       <Header logo={logo} altText={"logo"} className="Banana" setPage={setPage}/>
       <div className="content">
-        {page === "login" ? <Login handleClick={manageLogin} /> : page === "list" ? <Home /> :  <Submit handleClick={postData}/>}
+        {page === "login" ? <Login handleClick={manageLogin} /> : page === "list" ? <Home data={data} /> :  <Submit handleClick={postData}/>}
       </div>
       <main className="App-main">
         <h1> React to-do-list</h1>
