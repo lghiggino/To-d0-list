@@ -44,8 +44,8 @@ app.use(passport.session())
 
 app.use(flash())
   
-// app.use('/', mainRoutes)
-app.use('/', reactMainRoutes)
+app.use('/', mainRoutes)
+// app.use('/', reactMainRoutes)
 app.use('/todos', todoRoutes)
 app.use('/api', apiRoutes)
  
