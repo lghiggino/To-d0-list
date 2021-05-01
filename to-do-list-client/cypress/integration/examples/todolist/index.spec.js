@@ -20,7 +20,7 @@ describe('Visitante ve a home page', () => {
       cy.visit('http://localhost:3000')
       cy.contains('list').click()
   
-      // Should be on a new URL which includes '/commands/actions' - como fazer isso num SPA?
+      // Should be on a new URL which includes '/commands/actions' - como fazer isso num SPA? - esse modelo funciona para caminhos diferentes
       cy.url().should('include', '/commands/actions')
     })
 })

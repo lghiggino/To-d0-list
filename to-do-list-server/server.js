@@ -9,7 +9,9 @@ const logger = require('morgan')
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const todoRoutes = require('./routes/todos')
+const reactMainRoutes = require('./routes/react')
 const apiRoutes = require('./routes/api')
+
 const cors = require('cors')
 
 require('dotenv').config({path: './config/.env'})
@@ -42,7 +44,8 @@ app.use(passport.session())
 
 app.use(flash())
   
-app.use('/', mainRoutes)
+// app.use('/', mainRoutes)
+app.use('/', reactMainRoutes)
 app.use('/todos', todoRoutes)
 app.use('/api', apiRoutes)
  
