@@ -114,3 +114,10 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# env
+.env
+
+# comments
+mentoria marcus
+to-do-list-server/to-do-list-server-WORKING-OLD.tar.gz

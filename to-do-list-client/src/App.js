@@ -13,7 +13,7 @@ function App() {
   //stateManagement for the navigation
   const [page, setPage] = useState("home")
   //stateManagement for API stuff
-  const [data, setData] = useState(null);
+  const [data, setData] = useState("banana");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -26,6 +26,7 @@ function App() {
       try{
         const response = await fetch ("http://localhost:2121/api")
         const data = await response.json()
+        console.log(data)
         setData(data)
         setLoading(false)
         setError(false)
