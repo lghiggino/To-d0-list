@@ -43,6 +43,10 @@
   }
 }
 
+section.section{
+  height: 90vh;
+}
+
 li{
   color:red;
   text-decoration: line-through;
