@@ -3,6 +3,6 @@ module.exports = {
         res.render('index.ejs')
     },
     getIndexReact:(req,res)=>{
-        res.json("hello")
+        res.json()
     }
 }
