@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import axios from "axios"
 import "../styles/Login.css"
 
 
@@ -12,17 +13,17 @@ const Login = () => {
         const email = ev.target.parentElement[0].value
         const password = ev.target.parentElement[1].value
         console.log(email, password)
-        // const resp = await axios.post(`${NEXT_PUBLIC_ADVANCE_API}/auth`, {
-        //     email: form.email.value,
-        //     password: form.password.value,
-        // })
-        // if (resp.data.brokers.length === 0) {
-        //     console.log(resp.data.brokers[0])
-        //     alert('Você ainda não tem acesso a uma corretora.')
-        // } else {
-        //     AdvanceClient.setAccessToken(resp.data.accessToken)
-        //     router.push(`/broker/${resp.data.brokers[0].id}/acc/default`)
-        // }
+        try{
+                const resp = await axios.post("http://localhost:2121/login", {
+                email: email,
+                password: password,
+            })
+            console.log(resp)
+            // router.push("/") ???
+        }
+        catch(err){
+            console.log(err)
+        }
     }
 
     return (
@@ -38,7 +39,16 @@ const Login = () => {
                 </div>
                 <button type="submit" value="Login" onClick={(ev) => submit(ev)}>Login</button>
             </form>
+
+            <section>
+                <form action="/login" method="POST">
+                    <input type="email" name="email" placeholder="Email" />
+                    <input type="password" name="password" placeholder="Password" />
+                    <input type="submit" />
+                </form>
+            </section>
         </section>
+        
     )
 }
 
