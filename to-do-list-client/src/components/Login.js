@@ -12,7 +12,6 @@ const Login = () => {
         const form = ev.target.parentElement
         const email = ev.target.parentElement[0].value
         const password = ev.target.parentElement[1].value
-        console.log(email, password)
         try{
                 const resp = await axios.post("http://localhost:2121/login", {
                 email: email,
@@ -39,14 +38,6 @@ const Login = () => {
                 </div>
                 <button type="submit" value="Login" onClick={(ev) => submit(ev)}>Login</button>
             </form>
-
-            <section>
-                <form action="/login" method="POST">
-                    <input type="email" name="email" placeholder="Email" />
-                    <input type="password" name="password" placeholder="Password" />
-                    <input type="submit" />
-                </form>
-            </section>
         </section>
         
     )

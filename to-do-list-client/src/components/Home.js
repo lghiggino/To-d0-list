@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import axios from "axios"
 import "../styles/Home.css"
 import List from "../components/List"
 
@@ -13,8 +14,9 @@ const Home = (props) => {
 
     async function getDataFetch() {
         try {
-            const response = await fetch("http://localhost:2121/api")
-            const data = await response.json()
+            // const response = await fetch("http://localhost:2121/api")
+            // const data = await response.json()
+            const data = axios.get("http://localhost:2121/api")
             console.log(data)
             setData(data)
             setLoading(false)
@@ -43,7 +45,7 @@ const Home = (props) => {
                     <h2>Please login to see your to do list</h2>
                 </div> :
                 <div>
-                    <h2>Map data here {data}</h2>
+                    <h2>Map data here </h2>
                 </div>
             }
         </section>
