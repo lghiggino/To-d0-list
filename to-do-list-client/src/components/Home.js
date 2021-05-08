@@ -4,7 +4,7 @@ import "../styles/Home.css"
 import List from "../components/List"
 
 const Home = (props) => {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -16,8 +16,8 @@ const Home = (props) => {
         try {
             // const response = await fetch("http://localhost:2121/api")
             // const data = await response.json()
-            const data = axios.get("http://localhost:2121/api")
-            console.log(data)
+            const data = await axios.get("http://localhost:2121/api")
+            // console.log(data)
             setData(data)
             setLoading(false)
             setError(false)
